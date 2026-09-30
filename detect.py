@@ -167,3 +167,40 @@ def find_recurring(df: pd.DataFrame) -> pd.DataFrame:
 
     out = pd.DataFrame(results, columns=RESULT_COLUMNS)
     return out.sort_values("monthly_equivalent", ascending=False).reset_index(drop=True)
+
+
+# =====================================================================
+# STEP 5: FORECAST UPCOMING PAYMENTS
+# =====================================================================
+
+def forecast_upcoming(recurring: pd.DataFrame, start_date, days: int = 30) -> pd.DataFrame:
+    """List every payment we expect in the next `days` days.
+
+    Only 'Active' recurring items are used (stopped ones are ignored).
+    Weekly items can appear several times in the window.
+    """
+    start_date = pd.Timestamp(start_date)
+    end_date = start_date + pd.Timedelta(days=days)
+    rows = []
+
+    for _, r in recurring[recurring["status"] == "Active"].iterrows():
+        pay_date = r["next_date"]
+
+        # if the predicted date is already in the past, move it forward
+        while pay_date < start_date:
+            pay_date = _next_payment_date(pay_date, r["frequency"])
+
+        # collect every payment inside the window
+        while pay_date <= end_date:
+            rows.append({
+                "date": pay_date,
+                "vendor": r["vendor"],
+                "category": r["category"],
+                "frequency": r["frequency"],
+                "amount": r["expected_amount"],
+            })
+            pay_date = _next_payment_date(pay_date, r["frequency"])
+
+    cols = ["date", "vendor", "category", "frequency", "amount"]
+    out = pd.DataFrame(rows, columns=cols)
+    return out.sort_values("date").reset_index(drop=True)
