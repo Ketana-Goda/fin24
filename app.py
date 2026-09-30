@@ -4,6 +4,7 @@ import pandas as pd
 import plotly.express as px
 
 from detect import load_and_clean, find_recurring, forecast_upcoming
+from insights import build_alerts
 
 st.set_page_config(page_title="FIN-24 Expense Intelligence", layout="wide")
 st.title("💰 Recurring Expense Intelligence")
@@ -29,6 +30,7 @@ as_of = df["date"].max()
 recurring = find_recurring(df)
 active = recurring[recurring["status"] == "Active"]
 upcoming_30 = forecast_upcoming(recurring, as_of, 30)
+alerts = build_alerts(df, recurring)
 
 # ---------- Tabs ----------
 tab1, tab2, tab3, tab4 = st.tabs(
@@ -41,7 +43,7 @@ with tab1:
     c1.metric("Total Spending", f"₹{df['amount'].sum():,.0f}")
     c2.metric("Recurring / month", f"₹{active['monthly_equivalent'].sum():,.0f}")
     c3.metric("Upcoming (30 days)", f"₹{upcoming_30['amount'].sum():,.0f}")
-    c4.metric("Items to Review", "0")           # placeholder for now
+    c4.metric("Items to Review", len(alerts))
 
     # Monthly spending chart
     monthly = (
@@ -85,7 +87,24 @@ with tab2:
     st.dataframe(up_show, use_container_width=True)
 
 with tab3:
-    st.write("Alerts go here")
+    st.subheader(f"{len(alerts)} items need review")
+    st.caption("Flags are based on payment patterns only. The final decision "
+               "belongs to the finance team.")
+
+    icons = {"High": "🔴", "Medium": "🟠", "Low": "🔵"}
+    for a in alerts:
+        label = f"{icons[a['severity']]} {a['severity']} · {a['type']}: {a['title']}"
+        with st.expander(label):
+            st.write(a["message"])
+            st.write(f"**{a['impact_text']}**")
+
+            st.caption("Underlying transactions:")
+            keys = [v.lower() for v in a["vendors"]]
+            evidence = df[df["vendor_key"].isin(keys)].copy()
+            evidence = evidence.sort_values("date", ascending=False)
+            evidence["date"] = evidence["date"].dt.strftime("%d %b %Y")
+            st.dataframe(evidence[["date", "vendor", "category", "amount"]],
+                         use_container_width=True)
 
 with tab4:
     st.write("Chat agent goes here")
