@@ -51,6 +51,14 @@ with tab1:
         st.markdown(f"- {line}")
 
 
+    cat = active.groupby("category")["monthly_equivalent"].sum().reset_index()
+    st.plotly_chart(
+        px.pie(cat, names="category", values="monthly_equivalent",
+               title="Recurring cost by category (per month)", hole=0.4),
+        use_container_width=True,
+    )
+
+
     # Monthly spending chart
     monthly = (
         df.groupby(df["date"].dt.to_period("M").astype(str))["amount"]
@@ -73,6 +81,13 @@ with tab2:
         show[["vendor", "category", "frequency", "expected_amount",
               "next_date", "status", "confidence"]],
         use_container_width=True,
+    )
+
+    st.download_button(
+        "⬇️ Download recurring expenses (CSV)",
+        show.to_csv(index=False),
+        "recurring_expenses.csv",
+        "text/csv",
     )
 
     st.subheader("📅 Upcoming payments")
