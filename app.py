@@ -1,3 +1,4 @@
+from detect import load_and_clean
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -12,8 +13,14 @@ if uploaded is None:
     st.info("👈 Upload a CSV to begin (columns: date, vendor, category, amount)")
     st.stop()  # nothing below runs until a file is uploaded
 
-df = pd.read_csv(uploaded)
-df["date"] = pd.to_datetime(df["date"])
+raw = pd.read_csv(uploaded)
+try:
+    df = load_and_clean(raw)
+except ValueError as e:
+    st.error(f"Could not read this file: {e}")
+    st.stop()
+
+st.sidebar.success(f"Loaded {len(df)} transactions ({len(raw) - len(df)} rows removed)")
 
 # ---------- Tabs ----------
 tab1, tab2, tab3, tab4 = st.tabs(
