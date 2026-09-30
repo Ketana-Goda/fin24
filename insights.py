@@ -105,3 +105,81 @@ def build_alerts(df: pd.DataFrame, recurring: pd.DataFrame) -> list:
               + find_price_increases(df, recurring)
               + find_stopped(recurring))
     return sorted(alerts, key=lambda a: SEVERITY_ORDER[a["severity"]])
+
+
+
+
+
+# =====================================================================
+# STEP 7: PLAIN-ENGLISH INSIGHTS
+# =====================================================================
+
+def build_insights(df, recurring, upcoming_30, alerts) -> list:
+    """Return a list of short sentences that summarise the situation."""
+    if recurring.empty:
+        return ["No recurring expenses were detected in this data."]
+
+    active = recurring[recurring["status"] == "Active"]
+    insights = []
+
+    # 1) How much of all spending is recurring?
+    total_spend = df["amount"].sum()
+    rec_keys = recurring["vendor"].str.lower()
+    rec_spend = df[df["vendor_key"].isin(rec_keys)]["amount"].sum()
+    insights.append(
+        f"Recurring expenses make up **{rec_spend / total_spend:.0%}** of total spending "
+        f"(₹{rec_spend:,.0f} of ₹{total_spend:,.0f})."
+    )
+
+    # 2) How many commitments and what do they cost?
+    monthly = active["monthly_equivalent"].sum()
+    insights.append(
+        f"**{len(active)} active recurring commitments** cost about "
+        f"**₹{monthly:,.0f} per month** (₹{monthly * 12:,.0f} per year)."
+    )
+
+    # 3) Top 3 biggest
+    top = active.head(3)  # already sorted by monthly cost
+    top_text = ", ".join(f"{r.vendor} (₹{r.monthly_equivalent:,.0f}/month)"
+                         for r in top.itertuples())
+    insights.append(f"Largest recurring expenses: {top_text}.")
+
+    # 4) Biggest category
+    by_cat = active.groupby("category")["monthly_equivalent"].sum().sort_values(ascending=False)
+    insights.append(
+        f"**{by_cat.index[0]}** is the biggest recurring category "
+        f"(₹{by_cat.iloc[0]:,.0f} per month, {by_cat.iloc[0] / monthly:.0%} of recurring)."
+    )
+
+    # 4b) Cost of quarterly/yearly items hidden in the monthly view
+    # (skipped: kept simple for the hackathon)
+
+    # 5) Upcoming payments
+    insights.append(
+        f"Expected recurring payments in the next 30 days: "
+        f"**₹{upcoming_30['amount'].sum():,.0f}** across {len(upcoming_30)} payments."
+    )
+
+    # 6) Price increases
+    for a in alerts:
+        if a["type"] == "Price increase":
+            insights.append(f"📈 {a['title']}. {a['impact_text']}.")
+
+    # 7) Overlaps
+    overlaps = [a for a in alerts if a["type"] == "Potential duplicate"]
+    if overlaps:
+        overlap_cost = 0
+        for a in overlaps:
+            overlap_cost += active[active["vendor"].isin(a["vendors"])]["monthly_equivalent"].sum()
+        insights.append(
+            f"⚠️ **{len(overlaps)} groups** of subscriptions may overlap "
+            f"(₹{overlap_cost:,.0f} per month combined). Potential overlap, requires review."
+        )
+
+    # 8) Possibly stopped
+    stopped = recurring[recurring["status"] == "Possibly stopped"]
+    if len(stopped) > 0:
+        names = ", ".join(stopped["vendor"])
+        insights.append(f"🔵 Payments seem to have stopped for: {names}.")
+
+    return insights

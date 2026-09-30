@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 
 from detect import load_and_clean, find_recurring, forecast_upcoming
-from insights import build_alerts
+from insights import build_alerts, build_insights
 
 st.set_page_config(page_title="FIN-24 Expense Intelligence", layout="wide")
 st.title("💰 Recurring Expense Intelligence")
@@ -31,6 +31,7 @@ recurring = find_recurring(df)
 active = recurring[recurring["status"] == "Active"]
 upcoming_30 = forecast_upcoming(recurring, as_of, 30)
 alerts = build_alerts(df, recurring)
+insights = build_insights(df, recurring, upcoming_30, alerts)
 
 # ---------- Tabs ----------
 tab1, tab2, tab3, tab4 = st.tabs(
@@ -44,6 +45,11 @@ with tab1:
     c2.metric("Recurring / month", f"₹{active['monthly_equivalent'].sum():,.0f}")
     c3.metric("Upcoming (30 days)", f"₹{upcoming_30['amount'].sum():,.0f}")
     c4.metric("Items to Review", len(alerts))
+
+    st.subheader("💡 Key insights")
+    for line in insights:
+        st.markdown(f"- {line}")
+
 
     # Monthly spending chart
     monthly = (
