@@ -1,7 +1,9 @@
-from detect import load_and_clean
+from detect import load_and_clean, find_recurring
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+
+from detect import load_and_clean, find_recurring
 
 st.set_page_config(page_title="FIN-24 Expense Intelligence", layout="wide")
 st.title("💰 Recurring Expense Intelligence")
@@ -22,6 +24,9 @@ except ValueError as e:
 
 st.sidebar.success(f"Loaded {len(df)} transactions ({len(raw) - len(df)} rows removed)")
 
+recurring = find_recurring(df)
+active = recurring[recurring["status"] == "Active"]
+
 # ---------- Tabs ----------
 tab1, tab2, tab3, tab4 = st.tabs(
     ["📊 Dashboard", "🔄 Recurring", "⚠️ Alerts", "🤖 Finance Agent"]
@@ -31,7 +36,7 @@ with tab1:
     st.subheader("Overview")
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("Total Spending", f"₹{df['amount'].sum():,.0f}")
-    c2.metric("Recurring Spending", "₹0")       # placeholder for now
+    c2.metric("Recurring / month", f"₹{active['monthly_equivalent'].sum():,.0f}")
     c3.metric("Upcoming (30 days)", "₹0")       # placeholder for now
     c4.metric("Items to Review", "0")           # placeholder for now
 
@@ -49,7 +54,12 @@ with tab1:
     st.dataframe(df, use_container_width=True)
 
 with tab2:
-    st.write("Recurring expenses table goes here")
+    st.subheader(f"{len(recurring)} recurring expenses detected")
+    st.dataframe(
+        recurring[["vendor", "category", "frequency", "expected_amount",
+                   "next_date", "status", "confidence"]],
+        use_container_width=True,
+    )
 
 with tab3:
     st.write("Alerts go here")
