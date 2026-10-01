@@ -3,6 +3,7 @@ import pandas as pd
 import requests
 import os
 
+from style import apply_style
 from agent import ask_question
 from dotenv import load_dotenv
 from detect import forecast_invoice_cashflow, predict_next_month
@@ -30,7 +31,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
+apply_style()
 
 # ==================================================
 # PLUTO24 DARK / NEON UI

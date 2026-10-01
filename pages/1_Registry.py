@@ -4,6 +4,7 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+from style import apply_style
 from detect import find_recurring
 from insights import build_alerts
 from loaders import load_standard
