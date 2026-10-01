@@ -3,11 +3,17 @@ import os
 import pandas as pd
 import streamlit as st
 
+from auth import require_login
 from detect import find_recurring, forecast_upcoming
 from insights import build_alerts
 from loaders import load_standard
+from style import apply_style
+
 
 st.set_page_config(page_title="Finance Assistant", layout="wide")
+apply_style()
+require_login()
+
 st.title("🤖 Finance Assistant")
 st.caption("Answers are calculated from the transaction data, not guessed. "
            "Each answer shows the numbers behind it.")

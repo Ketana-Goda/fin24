@@ -5,6 +5,7 @@ import requests
 import streamlit as st
 from dotenv import load_dotenv
 
+from agent import ask_question
 from detect import forecast_invoice_cashflow, predict_next_month
 from insights import (
     client_outstanding,
@@ -12,7 +13,6 @@ from insights import (
     get_dashboard_summary,
 )
 from style import apply_style
-from auth import require_login
 
 # ==================================================
 # LOAD ENVIRONMENT
@@ -31,7 +31,6 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 apply_style()
-require_login()
 
 # ==================================================
 # PLUTO24 LIGHT / PURPLE UI
@@ -249,6 +248,7 @@ with st.sidebar:
             "◈ Invoices",
             "◇ Analytics",
             "⚠ Alerts",
+            "✦ AI Assistant",
         ],
         label_visibility="collapsed",
     )
@@ -402,3 +402,24 @@ if page == "⚠ Alerts":
                 f"₹{alert['amount_due']:,.2f}"
             )
 
+
+# ==================================================
+# AI ASSISTANT
+# ==================================================
+
+if page == "✦ AI Assistant":
+
+    st.markdown(
+        '<div class="pluto-title">AI Finance Assistant</div>',
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        '<div class="pluto-subtitle">Ask questions about your invoice data</div>',
+        unsafe_allow_html=True,
+    )
+
+    question = st.text_input("Ask PLUTO24", placeholder="e.g. How much is outstanding?")
+
+    if question:
+        answer = ask_question(question, df)
+        st.info(answer)
