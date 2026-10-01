@@ -183,3 +183,75 @@ def build_insights(df, recurring, upcoming_30, alerts) -> list:
         insights.append(f"🔵 Payments seem to have stopped for: {names}.")
 
     return insights
+# =====================================================================
+# ACZEN INVOICE INSIGHTS
+# =====================================================================
+
+def invoice_summary(df):
+    """Return basic summary statistics for Aczen invoice data."""
+
+    return {
+        "total_invoices": len(df),
+        "total_amount": df["total_amount"].sum(),
+        "paid_amount": df["paid_amount"].sum(),
+        "balance_due": df["balance_due"].sum(),
+        "paid_invoices": (df["status"] == "paid").sum(),
+        "pending_invoices": (df["status"] == "pending").sum(),
+        "overdue_invoices": (df["status"] == "overdue").sum(),
+        "partial_invoices": (df["status"] == "partial").sum(),
+    }
+def find_invoice_alerts(df):
+    """Find invoices that need attention."""
+
+    alerts = []
+
+    for _, row in df.iterrows():
+
+        if row["status"] == "overdue":
+            alerts.append({
+                "type": "Overdue",
+                "invoice_number": row["invoice_number"],
+                "client": row["client_name"],
+                "amount_due": row["balance_due"],
+                "message": f"{row['invoice_number']} from {row['client_name']} is overdue."
+            })
+
+        elif row["status"] == "pending":
+            alerts.append({
+                "type": "Pending",
+                "invoice_number": row["invoice_number"],
+                "client": row["client_name"],
+                "amount_due": row["balance_due"],
+                "message": f"{row['invoice_number']} from {row['client_name']} is pending."
+            })
+
+    # Sort highest outstanding amount first
+    alerts.sort(key=lambda x: x["amount_due"], reverse=True)
+
+    return alerts
+def client_outstanding(df):
+    """Calculate outstanding amount for each client."""
+
+    result = (
+        df.groupby("client_name")["balance_due"]
+        .sum()
+        .reset_index()
+    )
+
+    result = result.sort_values(
+        "balance_due",
+        ascending=False
+    )
+
+    return result
+def get_dashboard_summary(df):
+    """Return key numbers for the dashboard."""
+
+    return {
+        "total_invoices": len(df),
+        "total_amount": df["total_amount"].sum(),
+        "paid_amount": df["paid_amount"].sum(),
+        "outstanding": df["balance_due"].sum(),
+        "overdue_count": (df["status"] == "overdue").sum(),
+        "pending_count": (df["status"] == "pending").sum(),
+    }

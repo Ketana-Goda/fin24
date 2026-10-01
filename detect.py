@@ -4,63 +4,93 @@ import pandas as pd
 
 REQUIRED_COLUMNS = ["date", "vendor", "category", "amount"]
 
-
 def load_and_clean(df: pd.DataFrame) -> pd.DataFrame:
-    """Take a raw transactions table and return a clean one.
+    """Clean Aczen invoice data and convert it to our standard format."""
 
-    Expected columns: date, vendor, category, amount
-    Adds one extra column: vendor_key (lowercase name, used for grouping).
-    """
-    df = df.copy()  # never change the user's original data
+    df = df.copy()
 
-    # 1) Make column names lowercase with no spaces: " Vendor " -> "vendor"
+    # 1) Make column names lowercase with no spaces
     df.columns = [str(c).strip().lower() for c in df.columns]
 
-    # 2) Check the required columns exist
+    # 2) Convert Aczen invoice columns to our standard names
+    # We use total_amount as the invoice amount
+    df = df.drop(columns=["amount"])
+
+    df = df.rename(columns={
+        "invoice_date": "date",
+        "client_name": "vendor",
+        "total_amount": "amount"
+    })
+    # 3) Aczen invoices don't have categories
+    df["category"] = "Invoice"
+
+    # 4) Check required columns
     missing = [c for c in REQUIRED_COLUMNS if c not in df.columns]
+
     if missing:
-        raise ValueError(f"Missing columns: {missing}. Found: {list(df.columns)}")
+        raise ValueError(
+            f"Missing columns: {missing}. Found: {list(df.columns)}"
+        )
 
     df = df[REQUIRED_COLUMNS]
 
-    # 3) Dates: try the standard format (2026-01-31) first,
-    #    then fall back to day-first formats (31-01-2026) for the rest
-    parsed = pd.to_datetime(df["date"], errors="coerce", format="ISO8601")
-    failed = parsed.isna()
-    if failed.any():
-        parsed[failed] = pd.to_datetime(df.loc[failed, "date"], errors="coerce", dayfirst=True)
-    df["date"] = parsed
-    # 4) Amounts: remove ₹ , and spaces, then convert to numbers
-    df["amount"] = (
-        df["amount"]
-        .astype(str)
-        .str.replace(r"[₹,\s]", "", regex=False)
-        .pipe(pd.to_numeric, errors="coerce")
+    # 5) Convert dates
+    parsed = pd.to_datetime(
+        df["date"],
+        errors="coerce",
+        format="ISO8601"
     )
 
-    # 5) Vendor names: trim spaces and collapse double spaces
+    failed = parsed.isna()
+
+    if failed.any():
+        parsed[failed] = pd.to_datetime(
+            df.loc[failed, "date"],
+            errors="coerce",
+            dayfirst=True
+        )
+
+    df["date"] = parsed
+
+    # 6) Convert amounts to numbers
+    df["amount"] = pd.to_numeric(
+        df["amount"],
+        errors="coerce"
+    )
+
+    # 7) Clean vendor names
     df["vendor"] = (
         df["vendor"]
         .astype(str)
         .apply(lambda v: re.sub(r"\s+", " ", v).strip())
     )
+
     df["vendor_key"] = df["vendor"].str.lower()
 
-    # 6) Category: fill blanks
-    df["category"] = df["category"].fillna("Uncategorized").astype(str).str.strip()
+    # 8) Clean category
+    df["category"] = (
+        df["category"]
+        .fillna("Uncategorized")
+        .astype(str)
+        .str.strip()
+    )
+
     df.loc[df["category"] == "", "category"] = "Uncategorized"
 
-    # 7) Drop unusable rows: no date, no amount, no vendor
+    # 9) Remove unusable rows
     df = df.dropna(subset=["date", "amount"])
-    df = df[~df["vendor_key"].isin(["", "nan", "none"])]
 
-    # 8) Keep only real expenses (positive amounts). Refunds/credits are removed.
+    df = df[
+        ~df["vendor_key"].isin(["", "nan", "none"])
+    ]
+
+    # 10) Keep positive invoice amounts
     df = df[df["amount"] > 0]
 
-    # 9) Sort by date and tidy the row numbers
+    # 11) Sort by date
     df = df.sort_values("date").reset_index(drop=True)
-    return df
 
+    return df
 
 
 # =====================================================================
@@ -204,3 +234,28 @@ def forecast_upcoming(recurring: pd.DataFrame, start_date, days: int = 30) -> pd
     cols = ["date", "vendor", "category", "frequency", "amount"]
     out = pd.DataFrame(rows, columns=cols)
     return out.sort_values("date").reset_index(drop=True)
+def forecast_invoice_cashflow(df):
+    """Calculate monthly invoice amounts."""
+
+    df = df.copy()
+
+    df["invoice_date"] = pd.to_datetime(df["invoice_date"])
+
+    monthly = (
+        df.groupby(df["invoice_date"].dt.to_period("M"))["total_amount"]
+        .sum()
+        .reset_index()
+    )
+
+    monthly["invoice_date"] = monthly["invoice_date"].astype(str)
+
+    return monthly
+def predict_next_month(monthly_data):
+    """Predict next month's invoice amount using the average of previous months."""
+
+    if len(monthly_data) == 0:
+        return 0
+
+    average = monthly_data["total_amount"].mean()
+
+    return average

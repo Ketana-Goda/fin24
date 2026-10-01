@@ -1,12 +1,12 @@
 import pandas as pd
-from detect import load_and_clean, find_recurring, forecast_upcoming
-from insights import build_alerts, build_insights
+from insights import get_dashboard_summary
 
-df = load_and_clean(pd.read_csv("data/sample.csv"))
-rec = find_recurring(df)
-up = forecast_upcoming(rec, df["date"].max(), 30)
-alerts = build_alerts(df, rec)
+df = pd.read_csv("data/invoices.csv")
 
-for line in build_insights(df, rec, up, alerts):
-    print("•", line)
-    print()
+summary = get_dashboard_summary(df)
+
+print("Dashboard Summary")
+print("------------------")
+
+for key, value in summary.items():
+    print(f"{key}: {value}")

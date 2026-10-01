@@ -1,0 +1,533 @@
+date,vendor,category,amount,department
+2025-10-01,AWS,Cloud,8547.41,Engineering
+2025-10-01,Office Rent,Rent,45000.0,Admin
+2025-10-01,IndiGo,Travel,8390.5,General
+2025-10-01,Local Printers,Supplies,2271.71,General
+2025-10-02,Uber,Travel,578.94,General
+2025-10-03,Microsoft 365,Software,4200.0,Operations
+2025-10-04,Office 365,Software,3900.0,Operations
+2025-10-05,Adobe Creative Cloud,Software,3200.0,Marketing
+2025-10-05,Flipkart,Supplies,3828.8,General
+2025-10-05,IndiGo,Travel,9010.77,General
+2025-10-06,Fresh Bites Catering,Food,1105.31,Admin
+2025-10-07,Airtel Internet,Utilities,2999.0,Admin
+2025-10-07,Office Chairs,Furniture,22442.79,General
+2025-10-08,IndiGo,Travel,7970.26,General
+2025-10-08,Local Printers,Supplies,1352.05,General
+2025-10-08,IndiGo,Travel,11720.97,General
+2025-10-08,Canva Pro,Software,1500.0,Marketing
+2025-10-08,Consulting Fee,Services,46122.19,General
+2025-10-09,Dropbox,Software,1100.0,Operations
+2025-10-10,Consulting Fee,Services,47451.21,General
+2025-10-10,Zoom,Software,1500.0,Operations
+2025-10-10,Consulting Fee,Services,15593.39,General
+2025-10-12,Dell India,Hardware,88676.67,General
+2025-10-12,Slack,Software,2400.0,Engineering
+2025-10-13,Fresh Bites Catering,Food,1139.77,Admin
+2025-10-13,Consulting Fee,Services,40977.34,General
+2025-10-15,Figma,Software,2000.0,Marketing
+2025-10-15,Dell India,Hardware,32759.46,General
+2025-10-15,Consulting Fee,Services,29442.86,General
+2025-10-19,IndiGo,Travel,10511.36,General
+2025-10-20,Dell India,Hardware,36504.15,General
+2025-10-20,Fresh Bites Catering,Food,1229.98,Admin
+2025-10-20,HDFC Insurance,Insurance,18000.0,Finance
+2025-10-23,Dell India,Hardware,30212.74,General
+2025-10-23,Local Printers,Supplies,1545.43,General
+2025-10-25,Flipkart,Supplies,6930.49,General
+2025-10-27,Fresh Bites Catering,Food,1208.99,Admin
+2025-10-28,Consulting Fee,Services,43668.23,General
+2025-11-01,Flipkart,Supplies,3400.18,General
+2025-11-01,Office Rent,Rent,45000.0,Admin
+2025-11-01,AWS,Cloud,8505.27,Engineering
+2025-11-03,Microsoft 365,Software,4200.0,Operations
+2025-11-03,Fresh Bites Catering,Food,1144.09,Admin
+2025-11-04,Office 365,Software,3900.0,Operations
+2025-11-05,Office Chairs,Furniture,16601.33,General
+2025-11-05,Office Chairs,Furniture,22947.59,General
+2025-11-05,Adobe Creative Cloud,Software,3200.0,Marketing
+2025-11-06,Consulting Fee,Services,44369.25,General
+2025-11-06,Amazon Business,Supplies,10763.69,General
+2025-11-07,Uber,Travel,613.82,General
+2025-11-07,Flipkart,Supplies,4439.78,General
+2025-11-07,Airtel Internet,Utilities,2999.0,Admin
+2025-11-08,Swiggy,Food,776.07,General
+2025-11-08,Canva Pro,Software,1500.0,Marketing
+2025-11-08,Swiggy,Food,969.73,General
+2025-11-09,Dropbox,Software,1100.0,Operations
+2025-11-10,Zoom,Software,1500.0,Operations
+2025-11-10,Fresh Bites Catering,Food,1217.85,Admin
+2025-11-11,Consulting Fee,Services,39901.83,General
+2025-11-11,IndiGo,Travel,10662.08,General
+2025-11-12,Amazon Business,Supplies,9819.87,General
+2025-11-12,Slack,Software,2400.0,Engineering
+2025-11-13,Swiggy,Food,513.76,General
+2025-11-13,Dell India,Hardware,89635.09,General
+2025-11-15,Figma,Software,2000.0,Marketing
+2025-11-16,Amazon Business,Supplies,3819.4,General
+2025-11-16,Uber,Travel,1105.11,General
+2025-11-17,Fresh Bites Catering,Food,1261.89,Admin
+2025-11-17,Amazon Business,Supplies,9697.12,General
+2025-11-17,Office Chairs,Furniture,21913.2,General
+2025-11-20,Local Printers,Supplies,3137.33,General
+2025-11-20,IndiGo,Travel,3455.29,General
+2025-11-21,Consulting Fee,Services,36297.55,General
+2025-11-21,Office Chairs,Furniture,22861.24,General
+2025-11-22,Consulting Fee,Services,53635.99,General
+2025-11-22,Swiggy,Food,1106.35,General
+2025-11-24,Fresh Bites Catering,Food,1101.3,Admin
+2025-11-24,Amazon Business,Supplies,11787.1,General
+2025-11-24,Consulting Fee,Services,31676.17,General
+2025-11-24,Consulting Fee,Services,21860.29,General
+2025-11-24,IndiGo,Travel,10834.67,General
+2025-11-25,Office Chairs,Furniture,12227.16,General
+2025-11-25,Office Chairs,Furniture,19472.22,General
+2025-11-27,Office Chairs,Furniture,12989.5,General
+2025-11-28,Office Chairs,Furniture,15961.63,General
+2025-11-29,IndiGo,Travel,6466.76,General
+2025-12-01,Fresh Bites Catering,Food,1261.16,Admin
+2025-12-01,Consulting Fee,Services,22395.28,General
+2025-12-01,Swiggy,Food,1137.67,General
+2025-12-01,Office Chairs,Furniture,20628.98,General
+2025-12-01,AWS,Cloud,8763.82,Engineering
+2025-12-01,Office Rent,Rent,45000.0,Admin
+2025-12-02,Consulting Fee,Services,11443.47,General
+2025-12-02,Swiggy,Food,793.4,General
+2025-12-03,Microsoft 365,Software,4200.0,Operations
+2025-12-04,IndiGo,Travel,4155.52,General
+2025-12-04,Office 365,Software,3900.0,Operations
+2025-12-04,IndiGo,Travel,5468.8,General
+2025-12-05,Adobe Creative Cloud,Software,3200.0,Marketing
+2025-12-07,Airtel Internet,Utilities,2999.0,Admin
+2025-12-08,Flipkart,Supplies,2336.39,General
+2025-12-08,Canva Pro,Software,1500.0,Marketing
+2025-12-08,Fresh Bites Catering,Food,1239.63,Admin
+2025-12-09,IndiGo,Travel,10776.24,General
+2025-12-09,Dropbox,Software,1100.0,Operations
+2025-12-10,Zoom,Software,1500.0,Operations
+2025-12-10,Swiggy,Food,862.38,General
+2025-12-11,Dell India,Hardware,44797.65,General
+2025-12-12,Dell India,Hardware,34284.59,General
+2025-12-12,Flipkart,Supplies,6106.97,General
+2025-12-12,Slack,Software,2400.0,Engineering
+2025-12-14,Local Printers,Supplies,1279.11,General
+2025-12-15,IndiGo,Travel,6868.08,General
+2025-12-15,Swiggy,Food,231.75,General
+2025-12-15,Fresh Bites Catering,Food,1168.05,Admin
+2025-12-15,Figma,Software,2000.0,Marketing
+2025-12-16,Consulting Fee,Services,32327.37,General
+2025-12-17,Amazon Business,Supplies,2663.36,General
+2025-12-18,Swiggy,Food,686.09,General
+2025-12-20,IndiGo,Travel,3511.92,General
+2025-12-22,Fresh Bites Catering,Food,1131.1,Admin
+2025-12-23,Flipkart,Supplies,7728.35,General
+2025-12-24,Dell India,Hardware,45418.21,General
+2025-12-24,Amazon Business,Supplies,5995.11,General
+2025-12-24,Local Printers,Supplies,3425.82,General
+2025-12-25,Swiggy,Food,728.34,General
+2025-12-25,Office Chairs,Furniture,18300.18,General
+2025-12-27,Uber,Travel,333.82,General
+2025-12-28,Swiggy,Food,917.59,General
+2025-12-29,Amazon Business,Supplies,7322.26,General
+2025-12-29,Fresh Bites Catering,Food,1291.44,Admin
+2025-12-30,Swiggy,Food,1245.34,General
+2025-12-31,Office Chairs,Furniture,13138.55,General
+2026-01-01,AWS,Cloud,8920.4,Engineering
+2026-01-01,Office Rent,Rent,45000.0,Admin
+2026-01-02,Office Chairs,Furniture,16288.35,General
+2026-01-02,Local Printers,Supplies,1402.76,General
+2026-01-03,Microsoft 365,Software,4200.0,Operations
+2026-01-03,Office Chairs,Furniture,24413.46,General
+2026-01-04,Office 365,Software,3900.0,Operations
+2026-01-05,Office Chairs,Furniture,24673.17,General
+2026-01-05,Fresh Bites Catering,Food,1167.32,Admin
+2026-01-05,Adobe Creative Cloud,Software,3200.0,Marketing
+2026-01-06,Local Printers,Supplies,3718.73,General
+2026-01-06,Local Printers,Supplies,739.57,General
+2026-01-06,Uber,Travel,461.54,General
+2026-01-07,Airtel Internet,Utilities,2999.0,Admin
+2026-01-07,Uber,Travel,377.2,General
+2026-01-08,Canva Pro,Software,1500.0,Marketing
+2026-01-08,Flipkart,Supplies,2581.1,General
+2026-01-09,Dropbox,Software,1100.0,Operations
+2026-01-10,Zoom,Software,1500.0,Operations
+2026-01-10,Dell India,Hardware,89962.41,General
+2026-01-12,Fresh Bites Catering,Food,1118.55,Admin
+2026-01-12,Slack,Software,2400.0,Engineering
+2026-01-13,Office Chairs,Furniture,19687.45,General
+2026-01-13,Amazon Business,Supplies,4372.32,General
+2026-01-15,Flipkart,Supplies,5116.47,General
+2026-01-15,Figma,Software,2000.0,Marketing
+2026-01-17,Office Chairs,Furniture,19142.46,General
+2026-01-18,Consulting Fee,Services,53232.52,General
+2026-01-19,Fresh Bites Catering,Food,1119.34,Admin
+2026-01-20,HDFC Insurance,Insurance,18000.0,Finance
+2026-01-21,Consulting Fee,Services,23646.77,General
+2026-01-21,Office Chairs,Furniture,18822.5,General
+2026-01-22,Consulting Fee,Services,19978.64,General
+2026-01-23,Swiggy,Food,230.76,General
+2026-01-24,Flipkart,Supplies,7940.38,General
+2026-01-25,Dell India,Hardware,74805.98,General
+2026-01-26,Fresh Bites Catering,Food,1269.5,Admin
+2026-01-26,Amazon Business,Supplies,12416.14,General
+2026-01-26,Amazon Business,Supplies,1477.3,General
+2026-01-26,Dell India,Hardware,66423.9,General
+2026-01-26,IndiGo,Travel,8295.96,General
+2026-01-27,Uber,Travel,552.19,General
+2026-01-29,Dell India,Hardware,46302.91,General
+2026-01-29,Flipkart,Supplies,5159.94,General
+2026-01-30,Uber,Travel,1057.84,General
+2026-02-01,Office Rent,Rent,45000.0,Admin
+2026-02-01,AWS,Cloud,9287.7,Engineering
+2026-02-02,Local Printers,Supplies,931.26,General
+2026-02-02,Consulting Fee,Services,49230.97,General
+2026-02-02,Fresh Bites Catering,Food,1220.75,Admin
+2026-02-03,Microsoft 365,Software,4200.0,Operations
+2026-02-04,Office 365,Software,3900.0,Operations
+2026-02-04,Amazon Business,Supplies,3390.73,General
+2026-02-05,Adobe Creative Cloud,Software,3200.0,Marketing
+2026-02-06,IndiGo,Travel,11739.71,General
+2026-02-07,Airtel Internet,Utilities,2999.0,Admin
+2026-02-07,Local Printers,Supplies,3405.68,General
+2026-02-08,Swiggy,Food,257.7,General
+2026-02-08,Canva Pro,Software,1500.0,Marketing
+2026-02-09,Dropbox,Software,1100.0,Operations
+2026-02-09,Fresh Bites Catering,Food,1261.43,Admin
+2026-02-10,Office Chairs,Furniture,13785.76,General
+2026-02-10,Zoom,Software,1500.0,Operations
+2026-02-11,Flipkart,Supplies,1674.97,General
+2026-02-12,Slack,Software,2400.0,Engineering
+2026-02-13,Local Printers,Supplies,3735.47,General
+2026-02-13,Swiggy,Food,714.52,General
+2026-02-13,IndiGo,Travel,4192.11,General
+2026-02-14,Swiggy,Food,406.96,General
+2026-02-14,IndiGo,Travel,10384.95,General
+2026-02-14,IndiGo,Travel,9917.39,General
+2026-02-15,Figma,Software,2000.0,Marketing
+2026-02-16,Fresh Bites Catering,Food,1245.95,Admin
+2026-02-16,Consulting Fee,Services,25331.15,General
+2026-02-18,Local Printers,Supplies,429.15,General
+2026-02-19,Consulting Fee,Services,46229.25,General
+2026-02-20,Flipkart,Supplies,7088.56,General
+2026-02-20,Local Printers,Supplies,3107.24,General
+2026-02-20,Swiggy,Food,1069.67,General
+2026-02-20,Flipkart,Supplies,3003.83,General
+2026-02-20,Consulting Fee,Services,19074.46,General
+2026-02-23,Fresh Bites Catering,Food,1207.25,Admin
+2026-02-23,Office Chairs,Furniture,10681.7,General
+2026-02-24,Consulting Fee,Services,31150.37,General
+2026-02-24,Dell India,Hardware,42610.96,General
+2026-02-25,Consulting Fee,Services,43129.18,General
+2026-02-25,Consulting Fee,Services,43880.54,General
+2026-02-25,Uber,Travel,610.02,General
+2026-02-27,Consulting Fee,Services,11631.99,General
+2026-02-28,Amazon Business,Supplies,5697.72,General
+2026-02-28,Flipkart,Supplies,2006.29,General
+2026-03-01,Office Rent,Rent,45000.0,Admin
+2026-03-01,Consulting Fee,Services,47327.97,General
+2026-03-01,AWS,Cloud,9451.02,Engineering
+2026-03-02,Dell India,Hardware,80248.56,General
+2026-03-02,Consulting Fee,Services,53008.33,General
+2026-03-02,Fresh Bites Catering,Food,1294.62,Admin
+2026-03-03,Microsoft 365,Software,4200.0,Operations
+2026-03-03,IndiGo,Travel,11385.8,General
+2026-03-03,Flipkart,Supplies,4204.84,General
+2026-03-04,Office 365,Software,3900.0,Operations
+2026-03-05,Adobe Creative Cloud,Software,3200.0,Marketing
+2026-03-06,Local Printers,Supplies,2447.07,General
+2026-03-06,Swiggy,Food,1063.15,General
+2026-03-07,Airtel Internet,Utilities,2999.0,Admin
+2026-03-07,Office Chairs,Furniture,12070.69,General
+2026-03-07,Amazon Business,Supplies,5787.45,General
+2026-03-07,Uber,Travel,774.8,General
+2026-03-08,Amazon Business,Supplies,11934.85,General
+2026-03-08,Canva Pro,Software,1500.0,Marketing
+2026-03-09,Fresh Bites Catering,Food,1175.71,Admin
+2026-03-09,Dropbox,Software,1100.0,Operations
+2026-03-09,Swiggy,Food,718.69,General
+2026-03-10,Amazon Business,Supplies,1328.9,General
+2026-03-10,Zoom,Software,1500.0,Operations
+2026-03-11,Flipkart,Supplies,2243.47,General
+2026-03-11,IndiGo,Travel,11412.36,General
+2026-03-12,Slack,Software,2400.0,Engineering
+2026-03-12,Local Printers,Supplies,2656.48,General
+2026-03-14,Office Chairs,Furniture,19392.27,General
+2026-03-15,Dell India,Hardware,81102.79,General
+2026-03-15,Local Printers,Supplies,2573.37,General
+2026-03-15,Figma,Software,2000.0,Marketing
+2026-03-16,Fresh Bites Catering,Food,1210.41,Admin
+2026-03-17,Local Printers,Supplies,1848.64,General
+2026-03-17,Consulting Fee,Services,26875.03,General
+2026-03-18,Uber,Travel,582.23,General
+2026-03-19,IndiGo,Travel,11453.13,General
+2026-03-19,IndiGo,Travel,6166.29,General
+2026-03-19,Amazon Business,Supplies,1527.43,General
+2026-03-22,Local Printers,Supplies,503.32,General
+2026-03-23,Flipkart,Supplies,461.96,General
+2026-03-23,Dell India,Hardware,67395.56,General
+2026-03-23,Fresh Bites Catering,Food,1265.88,Admin
+2026-03-26,Local Printers,Supplies,3022.76,General
+2026-03-26,Consulting Fee,Services,26622.0,General
+2026-03-29,Consulting Fee,Services,25259.54,General
+2026-03-29,Amazon Business,Supplies,3751.22,General
+2026-03-30,Amazon Business,Supplies,4829.88,General
+2026-03-30,Fresh Bites Catering,Food,1223.7,Admin
+2026-03-31,Local Printers,Supplies,1924.88,General
+2026-04-01,AWS,Cloud,9722.54,Engineering
+2026-04-01,Office Rent,Rent,45000.0,Admin
+2026-04-02,Amazon Business,Supplies,3546.11,General
+2026-04-03,Microsoft 365,Software,4200.0,Operations
+2026-04-04,IndiGo,Travel,8603.7,General
+2026-04-04,Office 365,Software,3900.0,Operations
+2026-04-05,Adobe Creative Cloud,Software,3200.0,Marketing
+2026-04-05,Swiggy,Food,760.69,General
+2026-04-06,Fresh Bites Catering,Food,1272.34,Admin
+2026-04-07,Airtel Internet,Utilities,2999.0,Admin
+2026-04-08,Canva Pro,Software,1500.0,Marketing
+2026-04-10,Zoom,Software,1500.0,Operations
+2026-04-12,IndiGo,Travel,7098.1,General
+2026-04-12,Slack,Software,2400.0,Engineering
+2026-04-13,Dell India,Hardware,49641.16,General
+2026-04-13,Fresh Bites Catering,Food,1215.47,Admin
+2026-04-14,Flipkart,Supplies,7015.68,General
+2026-04-15,Figma,Software,2000.0,Marketing
+2026-04-16,Local Printers,Supplies,3958.29,General
+2026-04-18,Local Printers,Supplies,3657.42,General
+2026-04-20,HDFC Insurance,Insurance,18000.0,Finance
+2026-04-20,Fresh Bites Catering,Food,1240.91,Admin
+2026-04-22,Local Printers,Supplies,3789.29,General
+2026-04-23,Swiggy,Food,626.74,General
+2026-04-23,IndiGo,Travel,9115.66,General
+2026-04-24,Flipkart,Supplies,4086.45,General
+2026-04-24,Office Chairs,Furniture,12551.59,General
+2026-04-25,Swiggy,Food,355.85,General
+2026-04-25,Flipkart,Supplies,6959.81,General
+2026-04-27,IndiGo,Travel,11764.53,General
+2026-04-27,Fresh Bites Catering,Food,1109.16,Admin
+2026-04-27,Local Printers,Supplies,1591.17,General
+2026-04-29,Office Chairs,Furniture,21638.0,General
+2026-04-30,Uber,Travel,176.03,General
+2026-04-30,Consulting Fee,Services,12710.2,General
+2026-05-01,AWS,Cloud,9602.51,Engineering
+2026-05-01,Office Rent,Rent,45000.0,Admin
+2026-05-01,Consulting Fee,Services,13113.29,General
+2026-05-01,Dell India,Hardware,50392.51,General
+2026-05-01,Office Chairs,Furniture,10985.88,General
+2026-05-03,Microsoft 365,Software,4200.0,Operations
+2026-05-03,Local Printers,Supplies,2337.59,General
+2026-05-03,Flipkart,Supplies,5361.77,General
+2026-05-04,Office 365,Software,3900.0,Operations
+2026-05-04,Fresh Bites Catering,Food,1145.58,Admin
+2026-05-05,Adobe Creative Cloud,Software,3200.0,Marketing
+2026-05-06,Swiggy,Food,349.21,General
+2026-05-06,Office Chairs,Furniture,24942.73,General
+2026-05-07,Airtel Internet,Utilities,2999.0,Admin
+2026-05-07,IndiGo,Travel,10475.12,General
+2026-05-08,Canva Pro,Software,1500.0,Marketing
+2026-05-10,Zoom,Software,1500.0,Operations
+2026-05-11,Fresh Bites Catering,Food,1157.88,Admin
+2026-05-12,Office Chairs,Furniture,18305.55,General
+2026-05-12,Slack,Software,2400.0,Engineering
+2026-05-13,Dell India,Hardware,37461.22,General
+2026-05-13,Office Chairs,Furniture,23293.44,General
+2026-05-14,Dell India,Hardware,34649.0,General
+2026-05-15,Figma,Software,2000.0,Marketing
+2026-05-15,Uber,Travel,729.26,General
+2026-05-16,Flipkart,Supplies,1581.01,General
+2026-05-17,IndiGo,Travel,11074.87,General
+2026-05-18,Consulting Fee,Services,49646.64,General
+2026-05-18,Fresh Bites Catering,Food,1115.96,Admin
+2026-05-19,Consulting Fee,Services,22959.58,General
+2026-05-21,Uber,Travel,153.41,General
+2026-05-21,Flipkart,Supplies,3138.11,General
+2026-05-22,Swiggy,Food,916.64,General
+2026-05-22,Flipkart,Supplies,3491.2,General
+2026-05-23,Dell India,Hardware,48970.63,General
+2026-05-25,Flipkart,Supplies,7592.37,General
+2026-05-25,Uber,Travel,340.82,General
+2026-05-25,Fresh Bites Catering,Food,1146.56,Admin
+2026-05-26,IndiGo,Travel,3451.97,General
+2026-05-26,Swiggy,Food,940.8,General
+2026-05-27,Office Chairs,Furniture,15510.36,General
+2026-05-27,Swiggy,Food,1109.3,General
+2026-05-29,Flipkart,Supplies,2979.3,General
+2026-05-29,Dell India,Hardware,58722.85,General
+2026-05-29,Flipkart,Supplies,6317.74,General
+2026-05-31,Office Chairs,Furniture,17409.04,General
+2026-05-31,Uber,Travel,852.93,General
+2026-06-01,Fresh Bites Catering,Food,1120.2,Admin
+2026-06-01,Office Rent,Rent,45000.0,Admin
+2026-06-01,Swiggy,Food,994.66,General
+2026-06-01,AWS,Cloud,9928.0,Engineering
+2026-06-02,Dell India,Hardware,36845.23,General
+2026-06-03,Microsoft 365,Software,4200.0,Operations
+2026-06-04,Office 365,Software,3900.0,Operations
+2026-06-05,IndiGo,Travel,7183.86,General
+2026-06-05,Local Printers,Supplies,3928.88,General
+2026-06-05,Adobe Creative Cloud,Software,3200.0,Marketing
+2026-06-06,Flipkart,Supplies,6583.38,General
+2026-06-06,IndiGo,Travel,8640.74,General
+2026-06-07,Airtel Internet,Utilities,2999.0,Admin
+2026-06-08,Canva Pro,Software,1500.0,Marketing
+2026-06-08,Local Printers,Supplies,2398.63,General
+2026-06-08,Fresh Bites Catering,Food,1155.59,Admin
+2026-06-10,Zoom,Software,1500.0,Operations
+2026-06-11,Uber,Travel,1163.07,General
+2026-06-12,Slack,Software,2400.0,Engineering
+2026-06-13,Uber,Travel,1129.29,General
+2026-06-14,Dell India,Hardware,62398.89,General
+2026-06-14,Dell India,Hardware,75717.73,General
+2026-06-15,Figma,Software,2000.0,Marketing
+2026-06-15,Uber,Travel,1163.62,General
+2026-06-15,Fresh Bites Catering,Food,1227.14,Admin
+2026-06-15,Consulting Fee,Services,55969.36,General
+2026-06-16,Dell India,Hardware,59311.91,General
+2026-06-18,Dell India,Hardware,72324.7,General
+2026-06-19,Swiggy,Food,815.14,General
+2026-06-22,Fresh Bites Catering,Food,1172.97,Admin
+2026-06-25,Uber,Travel,1163.75,General
+2026-06-25,Swiggy,Food,694.49,General
+2026-06-29,Office Chairs,Furniture,16530.51,General
+2026-06-29,Fresh Bites Catering,Food,1174.04,Admin
+2026-06-30,Office Chairs,Furniture,15282.43,General
+2026-07-01,AWS,Cloud,9967.23,Engineering
+2026-07-01,Office Rent,Rent,45000.0,Admin
+2026-07-02,Swiggy,Food,783.2,General
+2026-07-03,Microsoft 365,Software,4200.0,Operations
+2026-07-03,IndiGo,Travel,5364.67,General
+2026-07-04,Swiggy,Food,372.01,General
+2026-07-04,Uber,Travel,1070.28,General
+2026-07-04,Swiggy,Food,1181.84,General
+2026-07-04,Office Chairs,Furniture,9369.82,General
+2026-07-04,Office 365,Software,3900.0,Operations
+2026-07-04,Uber,Travel,1151.17,General
+2026-07-05,Consulting Fee,Services,11794.95,General
+2026-07-05,Adobe Creative Cloud,Software,3200.0,Marketing
+2026-07-06,Fresh Bites Catering,Food,1141.9,Admin
+2026-07-07,Airtel Internet,Utilities,2999.0,Admin
+2026-07-08,Canva Pro,Software,1500.0,Marketing
+2026-07-08,Local Printers,Supplies,3401.41,General
+2026-07-09,Local Printers,Supplies,532.11,General
+2026-07-09,Consulting Fee,Services,18256.35,General
+2026-07-10,Zoom,Software,1500.0,Operations
+2026-07-11,Flipkart,Supplies,1496.95,General
+2026-07-11,Amazon Business,Supplies,4735.98,General
+2026-07-11,Dell India,Hardware,37637.27,General
+2026-07-12,Slack,Software,2400.0,Engineering
+2026-07-12,Dell India,Hardware,30609.07,General
+2026-07-13,Fresh Bites Catering,Food,1153.4,Admin
+2026-07-13,Local Printers,Supplies,1716.79,General
+2026-07-13,Flipkart,Supplies,6186.21,General
+2026-07-15,Local Printers,Supplies,434.81,General
+2026-07-15,Figma,Software,2000.0,Marketing
+2026-07-17,Local Printers,Supplies,2854.48,General
+2026-07-17,Flipkart,Supplies,6326.29,General
+2026-07-18,Swiggy,Food,1339.28,General
+2026-07-18,Swiggy,Food,1431.03,General
+2026-07-20,HDFC Insurance,Insurance,18000.0,Finance
+2026-07-20,Swiggy,Food,697.86,General
+2026-07-20,Fresh Bites Catering,Food,1287.33,Admin
+2026-07-22,Amazon Business,Supplies,6015.52,General
+2026-07-22,Dell India,Hardware,70640.84,General
+2026-07-22,Office Chairs,Furniture,13029.83,General
+2026-07-24,Swiggy,Food,972.87,General
+2026-07-24,Amazon Business,Supplies,11168.19,General
+2026-07-24,Amazon Business,Supplies,5790.49,General
+2026-07-24,Flipkart,Supplies,497.72,General
+2026-07-26,Consulting Fee,Services,17155.89,General
+2026-07-26,Local Printers,Supplies,1837.84,General
+2026-07-27,Dell India,Hardware,52861.53,General
+2026-07-27,Fresh Bites Catering,Food,1229.61,Admin
+2026-07-28,Office Chairs,Furniture,13085.62,General
+2026-07-31,Local Printers,Supplies,2431.81,General
+2026-08-01,IndiGo,Travel,5855.68,General
+2026-08-01,Flipkart,Supplies,823.3,General
+2026-08-01,AWS,Cloud,10244.84,Engineering
+2026-08-01,Office Rent,Rent,45000.0,Admin
+2026-08-02,Local Printers,Supplies,628.7,General
+2026-08-02,IndiGo,Travel,5546.99,General
+2026-08-02,Local Printers,Supplies,3986.04,General
+2026-08-03,Microsoft 365,Software,4200.0,Operations
+2026-08-03,Fresh Bites Catering,Food,1221.83,Admin
+2026-08-04,Office 365,Software,3900.0,Operations
+2026-08-05,Adobe Creative Cloud,Software,3200.0,Marketing
+2026-08-05,IndiGo,Travel,11080.3,General
+2026-08-06,Dell India,Hardware,42637.78,General
+2026-08-07,Airtel Internet,Utilities,2999.0,Admin
+2026-08-07,IndiGo,Travel,6808.24,General
+2026-08-07,Amazon Business,Supplies,11305.0,General
+2026-08-08,Canva Pro,Software,1500.0,Marketing
+2026-08-09,Amazon Business,Supplies,14421.58,General
+2026-08-10,Fresh Bites Catering,Food,1134.23,Admin
+2026-08-10,Consulting Fee,Services,50750.33,General
+2026-08-10,Zoom,Software,1500.0,Operations
+2026-08-12,Slack,Software,2400.0,Engineering
+2026-08-12,Dell India,Hardware,78491.95,General
+2026-08-12,Uber,Travel,747.56,General
+2026-08-14,Local Printers,Supplies,2859.28,General
+2026-08-15,Figma,Software,2000.0,Marketing
+2026-08-15,Amazon Business,Supplies,2709.54,General
+2026-08-15,Uber,Travel,710.83,General
+2026-08-16,Office Chairs,Furniture,13336.57,General
+2026-08-17,Consulting Fee,Services,32102.05,General
+2026-08-17,Fresh Bites Catering,Food,1245.83,Admin
+2026-08-17,Dell India,Hardware,65387.38,General
+2026-08-18,Uber,Travel,252.02,General
+2026-08-18,Uber,Travel,317.98,General
+2026-08-22,Office Chairs,Furniture,23156.78,General
+2026-08-22,Local Printers,Supplies,3331.28,General
+2026-08-23,Uber,Travel,1178.79,General
+2026-08-23,Swiggy,Food,560.5,General
+2026-08-23,Uber,Travel,1061.88,General
+2026-08-23,Consulting Fee,Services,22698.87,General
+2026-08-24,Dell India,Hardware,60459.77,General
+2026-08-24,Fresh Bites Catering,Food,1132.68,Admin
+2026-08-26,Local Printers,Supplies,2051.87,General
+2026-08-28,Swiggy,Food,393.69,General
+2026-08-29,Local Printers,Supplies,689.14,General
+2026-08-30,Flipkart,Supplies,609.99,General
+2026-08-31,Fresh Bites Catering,Food,1175.89,Admin
+2026-09-01,Local Printers,Supplies,3891.84,General
+2026-09-01,Office Rent,Rent,45000.0,Admin
+2026-09-01,AWS,Cloud,10570.95,Engineering
+2026-09-02,Amazon Business,Supplies,13105.83,General
+2026-09-03,Uber,Travel,239.04,General
+2026-09-03,Microsoft 365,Software,4200.0,Operations
+2026-09-04,IndiGo,Travel,9465.67,General
+2026-09-04,Office 365,Software,3900.0,Operations
+2026-09-04,Dell India,Hardware,34871.25,General
+2026-09-05,IndiGo,Travel,8696.47,General
+2026-09-05,Adobe Creative Cloud,Software,3200.0,Marketing
+2026-09-06,Local Printers,Supplies,3785.31,General
+2026-09-07,Airtel Internet,Utilities,2999.0,Admin
+2026-09-07,Fresh Bites Catering,Food,1297.9,Admin
+2026-09-07,Swiggy,Food,333.63,General
+2026-09-07,Dell India,Hardware,30563.85,General
+2026-09-07,Consulting Fee,Services,36556.59,General
+2026-09-08,Swiggy,Food,1131.05,General
+2026-09-08,Canva Pro,Software,1500.0,Marketing
+2026-09-10,Amazon Business,Supplies,12410.61,General
+2026-09-10,Swiggy,Food,603.55,General
+2026-09-10,Zoom,Software,1500.0,Operations
+2026-09-11,Office Chairs,Furniture,22608.82,General
+2026-09-12,Swiggy,Food,1141.48,General
+2026-09-12,Slack,Software,2400.0,Engineering
+2026-09-13,Dell India,Hardware,75334.64,General
+2026-09-14,Fresh Bites Catering,Food,1228.0,Admin
+2026-09-14,Amazon Business,Supplies,10950.47,General
+2026-09-15,Figma,Software,2000.0,Marketing
+2026-09-16,Dell India,Hardware,66024.7,General
+2026-09-17,IndiGo,Travel,9474.87,General
+2026-09-19,Flipkart,Supplies,7260.25,General
+2026-09-19,Swiggy,Food,818.92,General
+2026-09-19,Local Printers,Supplies,1300.35,General
+2026-09-21,Fresh Bites Catering,Food,1211.39,Admin
+2026-09-22,Swiggy,Food,699.17,General
+2026-09-24,Dell India,Hardware,54150.51,General
+2026-09-26,IndiGo,Travel,5722.65,General
+2026-09-27,Consulting Fee,Services,55671.51,General
+2026-09-27,Uber,Travel,374.65,General
+2026-09-27,Dell India,Hardware,46963.1,General
+2026-09-28,Fresh Bites Catering,Food,1236.92,Admin
+2026-09-28,Consulting Fee,Services,17649.56,General
+2026-09-29,Swiggy,Food,405.89,General

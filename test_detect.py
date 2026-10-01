@@ -1,12 +1,15 @@
 import pandas as pd
-from detect import load_and_clean, find_recurring
 
-pd.set_option("display.width", 250)
-pd.set_option("display.max_columns", None)
+df = pd.read_csv("data/invoices.csv")
 
-df = load_and_clean(pd.read_csv("data/sample.csv"))
-rec = find_recurring(df)
+print("Invoice Status:")
+print(df["status"].value_counts())
 
-print(rec[["vendor", "frequency", "payments", "expected_amount",
-           "next_date", "status", "confidence"]])
-print("\nRecurring found:", len(rec))
+print("\nTotal invoice amount:")
+print(df["total_amount"].sum())
+
+print("\nTotal paid amount:")
+print(df["paid_amount"].sum())
+
+print("\nTotal balance due:")
+print(df["balance_due"].sum())
